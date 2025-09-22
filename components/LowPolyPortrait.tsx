@@ -1115,13 +1115,13 @@ function StyleSheet() {
     <style>{`
       path {
         opacity: 1;
-        stroke: #06923e;
-        // stroke: white;
+        // stroke: #06923e;
+        stroke: white;
         stroke-width: 1;
         stroke-dasharray: 1000;
         stroke-dashoffset: 0;
         stroke-opacity: 0;
-        transition: fill-opacity 3s ease-in-out;
+        transition: fill-opacity 2s ease-in-out;
         cursor: crosshair;
       }
 
@@ -1131,21 +1131,27 @@ function StyleSheet() {
       }
 
       path:not(:hover) {
-        animation: reappearAndDraw 4s linear;
+        animation: reappearAndDraw 10s linear, strokeOpacityFade 4s linear;
       }
 
       @keyframes reappearAndDraw {
         0% {
-          stroke-opacity: 1;
           stroke-dashoffset: 1000;
         }
         80% {
-          stroke-opacity: 1;
           stroke-dashoffset: 0;
         }
         100% {
-          stroke-opacity: 0;
           stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes strokeOpacityFade {
+        from {
+          stroke-opacity: 1;
+        }
+        to {
+          stroke-opacity: 0;
         }
       }
     `}</style>

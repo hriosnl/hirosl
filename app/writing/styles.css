@@ -1,0 +1,15 @@
+main {
+  @apply max-w-[645px] my-36;
+}
+
+h2 {
+  @apply font-semibold mt-20;
+}
+
+p {
+  @apply my-5;
+}
+
+div {
+  @apply mt-10;
+}

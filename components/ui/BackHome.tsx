@@ -2,10 +2,16 @@ import Link from "next/link";
 import { CornerUpLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export default function BackHome({ onBlack }: { onBlack?: boolean }) {
+export default function BackHome({
+  fragment,
+  onBlack,
+}: {
+  fragment?: string;
+  onBlack?: boolean;
+}) {
   return (
-    <div className={cn("fixed top-0 left-8 z-50", onBlack && "text-white")}>
-      <Link href="/">
+    <div className={cn("absolute top-5 left-10 z-50", onBlack && "text-white")}>
+      <Link href={fragment ? `/#${fragment}` : "/"}>
         <CornerUpLeft />
       </Link>
     </div>

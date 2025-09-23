@@ -1,10 +1,9 @@
 import BackHome from "@/components/ui/BackHome";
-import "./styles.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex justify-center">
-      <BackHome />
+    <div className="writing flex justify-center">
+      <BackHome fragment="writing" />
       {children}
     </div>
   );

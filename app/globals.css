@@ -40,3 +40,32 @@ body {
 .link:hover {
   text-decoration: none;
 }
+
+.writing {
+  main {
+    @apply max-w-[564px] my-36 text-lg;
+  }
+
+  h2 {
+    @apply font-bold mt-20;
+  }
+
+  p {
+    @apply my-5 text-justify;
+  }
+
+  ol {
+    @apply ml-5;
+  }
+
+  ol li {
+    @apply my-3;
+  }
+
+  figure {
+    @apply flex flex-col items-center;
+  }
+  figcaption {
+    @apply text-sm mt-2;
+  }
+}

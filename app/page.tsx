@@ -142,12 +142,12 @@ Hello W🌏RLD!
       <div className="h-14 sm:h-32" />
 
       {/* Writing */}
-      <section className="sm:w-[564px] px-4 sm:px-0">
+      <section id="writing" className="sm:w-[564px] px-4 sm:px-0">
         <h1 className="font-semibold p-3">Writing</h1>
         <WritingItem
           href="/writing/the-easiest-way-to-copy-animation-timing"
           title="The Easiest Way To Copy Animation Timing"
-          subtitle="It isn’t math—it’s music"
+          subtitle="Hint: it isn’t math, it’s music"
         />
         <WritingItem
           href="#"

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Source_Code_Pro } from "next/font/google";
 import Link from "next/link";
@@ -181,17 +181,38 @@ Hello W🌏RLD!
 }
 
 const ScreenRecord = ({ name }: { name: string }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <video
+      ref={videoRef}
       width="800"
       poster={`/images/thumbnails/${name}.png`}
-      preload="none"
       autoPlay
       muted
       playsInline
       loop
     >
-      <source src={`/videos/${name}.mp4`} type="video/mp4" />
+      {isVisible && <source src={`/videos/${name}.mp4`} type="video/mp4" />}
       Your browser does not support the video tag.
     </video>
   );

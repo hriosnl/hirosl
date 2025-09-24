@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 import { Nunito_Sans, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 
@@ -39,6 +41,9 @@ export default function RootLayout({
             Let&apos;s Talk!
           </div>
         </a>
+
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

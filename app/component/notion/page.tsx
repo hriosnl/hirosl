@@ -1,15 +1,12 @@
 "use client";
 
-import BackHome from "@/components/ui/BackHome";
 import { motion, Transition } from "motion/react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Page() {
   return (
-    <div className="h-full flex flex-col justify-center items-center bg-[#FEF9F2]">
-      <BackHome />
-
+    <div className="size-full flex flex-col justify-center items-center bg-[#FEF9F2]">
       <PaperPlaneWithTrails />
     </div>
   );

@@ -43,7 +43,7 @@ body {
 
 .writing {
   main {
-    @apply max-w-[564px] my-36 text-lg;
+    @apply max-w-[654px] my-36 text-lg px-5 sm:px-0;
   }
 
   h2 {
@@ -51,7 +51,7 @@ body {
   }
 
   p {
-    @apply my-5 text-justify;
+    @apply my-5;
   }
 
   ol {

@@ -3,18 +3,8 @@
 import { useState } from "react";
 import { AnimatePresence, motion, Transition } from "motion/react";
 import { cn } from "@/lib/utils";
-import BackHome from "@/components/ui/BackHome";
 
-export default function Page() {
-  return (
-    <div className="h-full flex flex-col justify-center items-center">
-      <BackHome />
-      <Steps />
-    </div>
-  );
-}
-
-function Steps() {
+export default function Steps() {
   const [step, setStep] = useState(1);
   const springTransition: Transition = {
     type: "spring",

@@ -1,25 +1,12 @@
 "use client";
 
-import { Roboto } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import BackHome from "@/components/ui/BackHome";
+import { Roboto } from "next/font/google";
 
 const roboto = Roboto({ subsets: ["latin"] });
 
-export default function Page() {
-  return (
-    <div
-      className={`h-full flex flex-col justify-center items-center ${roboto.className}`}
-    >
-      <BackHome />
-
-      <DynamicToggle />
-    </div>
-  );
-}
-
-function DynamicToggle() {
+export default function DynamicToggle() {
   const [activeTab, setActiveTab] = useState<"left" | "right">("left");
   const [activeSubTab, setActiveSubTab] = useState<"monthly" | "annual">(
     "monthly"
@@ -46,7 +33,9 @@ function DynamicToggle() {
   }, [activeSubTab]);
 
   return (
-    <div className="w-[22rem] sm:w-96 h-14 shadow-2xl rounded-4xl border border-gray-100 p-0.5 relative">
+    <div
+      className={`w-[22rem] sm:w-96 h-14 shadow-2xl rounded-4xl border border-gray-100 p-0.5 relative ${roboto.className}`}
+    >
       <div className="relative h-full">
         <div className="flex text-[#DDDAD0] font-medium rounded-4xl h-full">
           <button

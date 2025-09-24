@@ -4,28 +4,17 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { Eye, EyeClosed, Lock } from "lucide-react";
 import { Geist } from "next/font/google";
-import BackHome from "@/components/ui/BackHome";
 
 const geist = Geist({ subsets: ["latin"] });
 
-export default function Page() {
-  return (
-    <div className={`h-screen flex flex-col ${geist.className}`}>
-      <BackHome />
-
-      <div className="flex items-center justify-center h-screen">
-        <ShowHidePassword />
-      </div>
-    </div>
-  );
-}
-
-function ShowHidePassword() {
+export default function ShowHidePassword() {
   const [password, setPassword] = useState("Pupin123");
   const [isRevealed, setIsRevealed] = useState(false);
 
   return (
-    <div className="flex items-center justify-center w-[800px] h-[400px] rounded-3xl bg-[#58A0C8]">
+    <div
+      className={`flex items-center justify-center size-full bg-[#58A0C8] ${geist.className}`}
+    >
       <div className="flex flex-col w-96 relative">
         <motion.div className="relative left-0 flex items-center w-full">
           <Lock className="absolute left-6 text-white" size={20} />
@@ -34,7 +23,7 @@ function ShowHidePassword() {
             value={password}
             minLength={6}
             maxLength={12}
-            className="bg-[#113F67] text-[#5EABD6] rounded-lg px-16 py-6 text-xl focus:outline-2 focus:outline-white focus:outline-offset-2 tracking-[0.32em] placeholder:tracking-normal"
+            className="bg-[#113F67] text-[#5EABD6] rounded-lg w-full px-16 py-6 text-xl focus:outline-2 focus:outline-white focus:outline-offset-2 tracking-[0.32em] placeholder:tracking-normal"
             placeholder="Enter your password"
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -75,7 +64,7 @@ function ShowHidePassword() {
             value={password}
             minLength={6}
             maxLength={12}
-            className="bg-white text-[#4682A9] rounded-lg px-16  py-6 text-xl focus:outline-2 focus:outline-white focus:outline-offset-2 tracking-widest placeholder:tracking-normal"
+            className="bg-white text-[#4682A9] rounded-lg w-full px-16 py-6 text-xl focus:outline-2 focus:outline-white focus:outline-offset-2 tracking-widest placeholder:tracking-normal"
             placeholder="Enter your password"
             onChange={(e) => setPassword(e.target.value)}
           />

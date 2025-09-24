@@ -9,19 +9,9 @@ import { useEffect, useState } from "react";
 
 export default function Page() {
   return (
-    <div className="h-screen flex flex-col">
-      <BackHome />
-
-      <div className="flex items-center justify-center h-screen">
-        <Iphone size="md" color="natural-titanium" className="hidden sm:block">
-          <DraggableCalendar />
-        </Iphone>
-
-        <div className="w-full h-11/12 sm:hidden">
-          <DraggableCalendar />
-        </div>
-      </div>
-    </div>
+    <Iphone size="md" color="natural-titanium" className="hidden sm:block">
+      <DraggableCalendar />
+    </Iphone>
   );
 }
 

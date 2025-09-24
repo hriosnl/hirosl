@@ -2,17 +2,17 @@
 
 import { useEffect } from "react";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import Image from "next/image";
-import useTimePeriod from "@/hooks/useTimePeriod";
-import LowPolyPortrait from "@/components/LowPolyPortrait";
-import ImageStack from "@/components/ImageStack";
 import { Source_Code_Pro } from "next/font/google";
+import Link from "next/link";
+import LowPolyPortrait from "@/components/LowPolyPortrait";
+import useTimePeriod from "@/hooks/useTimePeriod";
+import useBreakpoint from "@/hooks/useBreakpoint";
 
 const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 
 export default function Home() {
   const timePeriod = useTimePeriod();
+  const isXS = useBreakpoint("xs");
 
   useEffect(() => {
     let credits = `
@@ -47,7 +47,7 @@ Hello W🌏RLD!
           Hi, I'm Hiro
         </p>
         <p className="mt-7">
-          I'm a design engineer. I help founders turn ideas into polished
+          I'm a design engineer. I help people turn ideas into polished
           experiences without sacrificing speed or quality.
         </p>
         <div className="flex flex-col gap-y-7 sm:flex-row justify-between mt-7 opacity-80">
@@ -91,7 +91,7 @@ Hello W🌏RLD!
             <ScreenRecord name="dynamic-toggle.mp4" />
           </ComponentContainer>
 
-          <ComponentContainer href="/cred">
+          <ComponentContainer href={!isXS ? "/cred" : null}>
             <ScreenRecord name="cred.mp4" />
           </ComponentContainer>
 
@@ -102,15 +102,15 @@ Hello W🌏RLD!
 
         {/* 2nd Grid */}
         <div className="flex flex-col gap-y-10 mt-10">
-          <ComponentContainer href="/yume">
+          <ComponentContainer href={!isXS ? "/yume" : null}>
             <ScreenRecord name="yume-long.mp4" />
           </ComponentContainer>
 
-          <ComponentContainer href="/stepper">
-            <ScreenRecord name="steps.mp4" />
+          <ComponentContainer href="/password-reveal" className="bg-[#589fc6]">
+            <ScreenRecord name="password-reveal.mp4" />
           </ComponentContainer>
 
-          <ComponentContainer href="/alltrails">
+          <ComponentContainer href={!isXS ? "/alltrails" : null}>
             <ScreenRecord name="trails.mp4" />
           </ComponentContainer>
         </div>
@@ -121,12 +121,12 @@ Hello W🌏RLD!
             <ScreenRecord name="transactions.mp4" />
           </ComponentContainer>
 
-          <ComponentContainer href="/joi">
+          <ComponentContainer href={!isXS ? "/joi" : null}>
             <ScreenRecord name="draggable-calendar.mp4" />
           </ComponentContainer>
 
-          <ComponentContainer href="/password-reveal" className="bg-[#58A0C8]">
-            <ScreenRecord name="password-reveal.mp4" />
+          <ComponentContainer href="/stepper">
+            <ScreenRecord name="steps.mp4" />
           </ComponentContainer>
 
           <ComponentContainer href="/popup-card">
@@ -147,13 +147,13 @@ Hello W🌏RLD!
         <WritingItem
           href="/writing/the-easiest-way-to-copy-animation-timing"
           title="The Easiest Way To Copy Animation Timing"
-          subtitle="Hint: it isn’t math, it’s music"
+          subtitle="Hint: it isn’t math, it’s rhythm"
         />
-        <WritingItem
+        {/* <WritingItem
           href="#"
           title="Lorem Ipsum"
           subtitle="Dolor sit amet consectetur adipiscing elit"
-        />
+        /> */}
       </section>
 
       <div className="h-14 sm:h-32" />
@@ -163,13 +163,13 @@ Hello W🌏RLD!
       <footer className="w-full max-w-[1146px] flex flex-col sm:flex-row justify-between text-base pt-10 px-6">
         <div className="flex flex-col sm:flex-row gap-x-10">
           <p>
-            <a href="mailto:hriosnl@gmail.com" className="link">
-              hriosnl@gmail.com
+            <a href="https://x.com/hriosnl" target="_blank" className="link">
+              x.com/@hriosnl
             </a>
           </p>
           <p>
-            <a href="https://x.com/hriosnl" target="_blank" className="link">
-              x.com/@hriosnl
+            <a href="mailto:hriosnl@gmail.com" className="link">
+              hriosnl@gmail.com
             </a>
           </p>
         </div>
@@ -189,26 +189,25 @@ const ScreenRecord = ({ name }: { name: string }) => {
 };
 
 const ComponentContainer = ({
-  href = "#",
+  href,
   className,
   children,
 }: {
-  href?: string;
+  href: string | null;
   className?: string;
   children: React.ReactNode;
 }) => {
   return (
-    // <Link href={href}>
-    <div
-      className={cn(
-        // "p-10 border border-[#E9E9E9] bg-white rounded-3xl sm:mx-0 transition-shadow duration-300 ease-in-out hover:shadow-[inset_0_4px_8px_rgba(0,0,0,0.1)]",
-        "p-10 border border-[#E9E9E9] bg-white rounded-3xl sm:mx-0",
-        className
-      )}
-    >
-      {children}
-    </div>
-    // </Link>
+    <Link href={!href ? "/component/not-available" : `/component/${href}`}>
+      <div
+        className={cn(
+          "p-10 border border-[#E9E9E9] bg-white rounded-3xl sm:mx-0 transition-shadow duration-300 ease-in-out hover:shadow-[inset_0_4px_8px_rgba(0,0,0,0.1)]",
+          className
+        )}
+      >
+        {children}
+      </div>
+    </Link>
   );
 };
 

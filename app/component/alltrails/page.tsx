@@ -22,56 +22,11 @@ interface CarouselItem {
   color: string;
 }
 
-const CAROUSEL_ITEMS: CarouselItem[] = [
-  {
-    id: 1,
-    image: "/images/doodles/doodle-1.png",
-    width: 160,
-    height: 160,
-    title: "Transcription",
-    content: "4h 13m",
-    color: "bg-gradient-to-br from-blue-500 to-purple-600",
-  },
-  {
-    id: 2,
-    image: "/images/doodles/doodle-2.png",
-    width: 216,
-    height: 216,
-    title: "Chat Thread",
-    content: "1,021 msgs",
-    color: "bg-gradient-to-br from-green-500 to-teal-600",
-  },
-  {
-    id: 3,
-    image: "/images/doodles/doodle-3.png",
-    width: 180,
-    height: 180,
-    title: "Battery Capacity",
-    content: "18,000 mAh",
-    color: "bg-gradient-to-br from-pink-500 to-rose-600",
-  },
-  {
-    id: 4,
-    image: "/images/doodles/doodle-4.png",
-    width: 300,
-    height: 300,
-    title: "Music Listened",
-    content: "10h 3m",
-    color: "bg-gradient-to-br from-orange-500 to-red-600",
-  },
-];
-
 export default function Page() {
   return (
-    <div className={cn("h-screen flex flex-col", funnelDisplay.className)}>
-      <BackHome />
-
-      <div className="flex items-center justify-center h-screen">
-        <Iphone size="md" color="natural-titanium">
-          <Carousel />
-        </Iphone>
-      </div>
-    </div>
+    <Iphone size="md" color="natural-titanium">
+      <Carousel />
+    </Iphone>
   );
 }
 
@@ -126,7 +81,7 @@ function Carousel() {
 
   return (
     <motion.div
-      className="overflow-hidden w-full h-full self-center flex flex-col space-y-20 pt-20 relative"
+      className={`overflow-hidden w-full h-full self-center flex flex-col space-y-20 pt-20 relative ${funnelDisplay.className}`}
       animate={{ backgroundColor: bgColors }}
     >
       <motion.h1
@@ -211,3 +166,42 @@ function Carousel() {
     </motion.div>
   );
 }
+
+const CAROUSEL_ITEMS: CarouselItem[] = [
+  {
+    id: 1,
+    image: "/images/doodles/doodle-1.png",
+    width: 160,
+    height: 160,
+    title: "Transcription",
+    content: "4h 13m",
+    color: "bg-gradient-to-br from-blue-500 to-purple-600",
+  },
+  {
+    id: 2,
+    image: "/images/doodles/doodle-2.png",
+    width: 216,
+    height: 216,
+    title: "Chat Thread",
+    content: "1,021 msgs",
+    color: "bg-gradient-to-br from-green-500 to-teal-600",
+  },
+  {
+    id: 3,
+    image: "/images/doodles/doodle-3.png",
+    width: 180,
+    height: 180,
+    title: "Battery Capacity",
+    content: "18,000 mAh",
+    color: "bg-gradient-to-br from-pink-500 to-rose-600",
+  },
+  {
+    id: 4,
+    image: "/images/doodles/doodle-4.png",
+    width: 300,
+    height: 300,
+    title: "Music Listened",
+    content: "10h 3m",
+    color: "bg-gradient-to-br from-orange-500 to-red-600",
+  },
+];

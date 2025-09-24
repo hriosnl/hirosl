@@ -1,39 +1,15 @@
 "use client";
 
-import BackHome from "@/components/ui/BackHome";
-import Image from "next/image";
-import { Atma } from "next/font/google";
-import { AnimatePresence, motion } from "motion/react";
 import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import { Atma } from "next/font/google";
 import useMeasure, { RectReadOnly } from "react-use-measure";
+import Image from "next/image";
 
 const atma = Atma({ subsets: ["latin"], weight: ["400", "500"] });
 
-export default function Page() {
-  return (
-    <div className="h-screen flex flex-col">
-      <BackHome />
-
-      <div className="flex items-center justify-center h-screen mb-32">
-        <AvatarPicker />
-      </div>
-
-      <div className="fixed bottom-0 right-1 text-xs">
-        The dog barks translations are from:{" "}
-        <a
-          className="underline"
-          target="_blank"
-          href="https://chapmangamo.tumblr.com/post/58440651720/worldwide-woofs-how-to-sound-like-a-dog-in-14"
-        >
-          James Chapman
-        </a>
-      </div>
-    </div>
-  );
-}
-
-function AvatarPicker() {
+export default function DogAvatar() {
   const [chosenDogId, setChosenDogId] = useState(-1);
   const [prevDogId, setPrevDogId] = useState(-1);
   const [showTooltip, setShowTooltip] = useState<number | null>(null);
@@ -88,6 +64,17 @@ function AvatarPicker() {
 
   return (
     <div className="flex flex-col items-center gap-y-6">
+      {/* <div className="fixed bottom-0 right-1 text-xs">
+        The dog barks translations are from:{" "}
+        <a
+          className="underline"
+          target="_blank"
+          href="https://chapmangamo.tumblr.com/post/58440651720/worldwide-woofs-how-to-sound-like-a-dog-in-14"
+        >
+          James Chapman
+        </a>
+      </div> */}
+
       <div className="text-2xl font-medium">
         Choose Your{" "}
         <span
@@ -310,11 +297,5 @@ const Dogs = [
     src: "/images/dogs/dog-purple.png",
     bark: "Bau",
     color: "#664992",
-  },
-  {
-    id: 6,
-    src: "/images/dogs/dog-red.png",
-    bark: "Wan",
-    color: "#ff0000",
   },
 ];

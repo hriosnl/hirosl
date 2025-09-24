@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { Iphone } from "@zuude-ui/ios-mockups";
 import NumberFlow from "@number-flow/react";
 import BackHome from "@/components/ui/BackHome";
-import Image from "next/image";
 
 const domine = Domine({ subsets: ["latin"] });
 const jost = Jost({ subsets: ["latin"] });
@@ -15,17 +14,9 @@ const familjenGrotesk = Familjen_Grotesk({ subsets: ["latin"] });
 
 export default function Page() {
   return (
-    <div className="h-full flex flex-col items-center justify-center">
-      <BackHome />
-
-      <Iphone size="md" color="black-titanium" className="hidden sm:block">
-        <CredSlider />
-      </Iphone>
-
-      <div className="w-[500px] h-[800px] bg-black sm:hidden">
-        <CredSlider />
-      </div>
-    </div>
+    <Iphone size="md" color="black-titanium">
+      <CredSlider />
+    </Iphone>
   );
 }
 

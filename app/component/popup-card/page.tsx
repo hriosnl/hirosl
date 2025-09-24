@@ -1,23 +1,9 @@
 "use client";
 
-import BackHome from "@/components/ui/BackHome";
 import { motion, MotionConfig, Transition } from "motion/react";
 import Image from "next/image";
-import { useState } from "react";
 
-export default function Page() {
-  return (
-    <div className="h-screen flex flex-col">
-      <BackHome />
-
-      <div className="flex items-center justify-center h-full">
-        <PopupCard />
-      </div>
-    </div>
-  );
-}
-
-function PopupCard() {
+export default function PopupCard() {
   const transitionOptions: Transition = {
     duration: 0.3,
     ease: "easeInOut",

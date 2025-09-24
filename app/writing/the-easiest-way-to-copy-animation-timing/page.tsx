@@ -3,7 +3,8 @@ export default function Page() {
     <main>
       <p>Timing isn’t calculated—it’s felt.</p>
       <p>
-        Yet when we search for advice online, we’re told:{" "}
+        Yet when we search for advice online on how to timing an animation,
+        we’re told:{" "}
         <span className="italic">
           “Open dev tools, inspect the code, find the CSS or JavaScript, and
           reverse-engineer the timing.”

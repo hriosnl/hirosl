@@ -10,7 +10,12 @@ export default function BackHome({
   onBlack?: boolean;
 }) {
   return (
-    <div className={cn("absolute top-5 left-10 z-50", onBlack && "text-white")}>
+    <div
+      className={cn(
+        "fixed top-5 left-5 sm:left-10 z-50 bg-white p-1 rounded-xl",
+        onBlack && "text-white bg-black"
+      )}
+    >
       <Link href={fragment ? `/#${fragment}` : "/"}>
         <CornerUpLeft />
       </Link>

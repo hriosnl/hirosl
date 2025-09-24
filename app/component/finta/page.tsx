@@ -3,17 +3,6 @@
 import Image from "next/image";
 import { AnimatePresence, Easing, motion } from "motion/react";
 import { useState } from "react";
-import BackHome from "@/components/ui/BackHome";
-
-export default function Page() {
-  return (
-    <div className="h-full flex flex-col justify-center items-center">
-      <BackHome />
-
-      <Transactions />
-    </div>
-  );
-}
 
 const TXS = [
   {
@@ -60,7 +49,7 @@ const TXS = [
   },
 ];
 
-function Transactions() {
+export default function Transactions() {
   const [isTransacting, setIsTransacting] = useState(false);
   const [transactionCount, setTransactionCount] = useState(0);
 

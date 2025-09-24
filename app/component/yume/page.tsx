@@ -19,23 +19,17 @@ export default function Page() {
   const [isFolded, setIsFolded] = useState(false);
 
   return (
-    <div className="h-screen flex flex-col">
-      <BackHome />
+    <Iphone size="md" color="black-titanium">
+      <div className="h-full flex flex-col relative overflow-hidden">
+        <div className="h-14 py-5 px-8 flex justify-between backdrop-blur-sm bg-white/10 z-10 rounded-t-full"></div>
 
-      <div className="flex items-center justify-center h-screen">
-        <Iphone size="md" color="black-titanium">
-          <div className="h-full flex flex-col relative overflow-hidden">
-            <div className="h-14 py-5 px-8 flex justify-between backdrop-blur-sm bg-white/10 z-10 rounded-t-full"></div>
-
-            <div className="flex-1 z-0 relative">
-              <Title isFolded={isFolded} />
-              <Book handleSetIsFolded={setIsFolded} />
-              <Calendar isFolded={isFolded} />
-            </div>
-          </div>
-        </Iphone>
+        <div className="flex-1 z-0 relative">
+          <Title isFolded={isFolded} />
+          <Book handleSetIsFolded={setIsFolded} />
+          <Calendar isFolded={isFolded} />
+        </div>
       </div>
-    </div>
+    </Iphone>
   );
 }
 

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Iphone } from "@zuude-ui/ios-mockups";
 import { Check, SquareCheck, CalendarDays } from "lucide-react";
 import { motion, PanInfo } from "motion/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Page() {
   return (
@@ -189,8 +189,8 @@ const TodoItem = ({ title, isDone }: { title: string; isDone?: boolean }) => {
         </div>
         <p
           className={cn(
-            "text-black font-semibold sm:text-lg",
-            isDone && "line-through text-[#4e5c4a]/60"
+            "font-semibold sm:text-lg",
+            isDone ? "line-through text-[#4e5c4a]/60" : "text-black"
           )}
         >
           {title}
@@ -217,8 +217,8 @@ const EventItem = ({
         <div className="flex justify-between items-baseline w-full">
           <span
             className={cn(
-              "text-black font-semibold sm:text-lg",
-              isDone && "line-through text-[#4e5c4a]/60"
+              "font-semibold sm:text-lg",
+              isDone ? "line-through text-[#4e5c4a]/60" : "text-black"
             )}
           >
             {title}

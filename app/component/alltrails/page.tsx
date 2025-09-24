@@ -43,8 +43,6 @@ function Carousel() {
   const handleDragEnd = () => {
     const offset = x.get();
     const newIndex = Math.round(-offset / cardWidth);
-    console.log("offset", offset);
-    console.log("newIndex", newIndex);
     const clampedIndex = Math.max(
       0,
       Math.min(CAROUSEL_ITEMS.length - 1, newIndex)

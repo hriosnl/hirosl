@@ -31,7 +31,14 @@ export default function DogAvatar() {
   const dogCircleRef4 = useMeasure();
   const dogCircleRef5 = useMeasure();
 
-  const dogCircleRefs = [dogCircleRef0, dogCircleRef1, dogCircleRef2, dogCircleRef3, dogCircleRef4, dogCircleRef5];
+  const dogCircleRefs = [
+    dogCircleRef0,
+    dogCircleRef1,
+    dogCircleRef2,
+    dogCircleRef3,
+    dogCircleRef4,
+    dogCircleRef5,
+  ];
 
   const getDestination = ({
     dogCircleBounds,
@@ -79,6 +86,7 @@ export default function DogAvatar() {
         <a
           className="underline"
           target="_blank"
+          rel="noopener noreferrer"
           href="https://chapmangamo.tumblr.com/post/58440651720/worldwide-woofs-how-to-sound-like-a-dog-in-14"
         >
           James Chapman
@@ -274,37 +282,37 @@ export default function DogAvatar() {
 const Dogs = [
   {
     id: 0,
-    src: "/images/dogs/dog-yellow.png",
+    src: "/images/dogs/dog-yellow.webp",
     bark: "Woof",
     color: "#f0c84d",
   },
   {
     id: 1,
-    src: "/images/dogs/dog-blue.png",
+    src: "/images/dogs/dog-blue.webp",
     bark: "Aw",
     color: "#003b76",
   },
   {
     id: 2,
-    src: "/images/dogs/dog-pink.png",
+    src: "/images/dogs/dog-pink.webp",
     bark: "Waouh",
     color: "#e19da4",
   },
   {
     id: 3,
-    src: "/images/dogs/dog-green.png",
+    src: "/images/dogs/dog-green.web p",
     bark: "Ham",
     color: "#55aa62",
   },
   {
     id: 4,
-    src: "/images/dogs/dog-orange.png",
+    src: "/images/dogs/dog-orange.webp",
     bark: "Guau",
     color: "#f36e1f",
   },
   {
     id: 5,
-    src: "/images/dogs/dog-purple.png",
+    src: "/images/dogs/dog-purple.webp",
     bark: "Bau",
     color: "#664992",
   },

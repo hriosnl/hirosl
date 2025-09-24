@@ -18,18 +18,12 @@ function DraggableCalendar() {
   const [collapsed, setCollapsed] = useState(false);
 
   function onDragEnd(_event: PointerEvent, info: PanInfo) {
-    console.log("drag end offset: ", info.offset.x, info.offset.y);
-
     if (info.offset.y > 50) {
       setCollapsed(true);
     } else {
       setCollapsed(false);
     }
   }
-
-  useEffect(() => {
-    console.log("collapsed: ", collapsed);
-  }, [collapsed]);
 
   return (
     <div className="pt-20 sm:pt-32 overflow-hidden relative h-full">

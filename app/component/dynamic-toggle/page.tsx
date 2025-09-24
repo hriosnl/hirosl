@@ -14,8 +14,6 @@ export default function DynamicToggle() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log("activeTab", activeTab);
-
     const container = containerRef.current;
 
     const clipPath =
@@ -27,10 +25,6 @@ export default function DynamicToggle() {
       container.style.clipPath = clipPath;
     }
   }, [activeTab]);
-
-  useEffect(() => {
-    console.log("activeSubTab", activeSubTab);
-  }, [activeSubTab]);
 
   return (
     <div

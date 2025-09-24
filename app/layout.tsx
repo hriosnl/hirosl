@@ -30,6 +30,7 @@ export default function RootLayout({
         <a
           href="https://x.com/messages/compose?recipient_id=1482692177340035075"
           target="_blank"
+          rel="noopener noreferrer"
           className="link"
         >
           <div

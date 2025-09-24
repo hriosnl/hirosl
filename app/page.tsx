@@ -56,6 +56,7 @@ Hello W🌏RLD!
               <a
                 href="https://x.com/messages/compose?recipient_id=1482692177340035075"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="link"
               >
                 x.com/@hriosnl
@@ -84,57 +85,57 @@ Hello W🌏RLD!
         {/* 1st Grid */}
         <div className="flex flex-col gap-y-10">
           <ComponentContainer href="/notion" className="bg-[#fef9f2]">
-            <ScreenRecord name="pupinmail.mp4" />
+            <ScreenRecord name="pupinmail" />
           </ComponentContainer>
 
           <ComponentContainer href="/dynamic-toggle">
-            <ScreenRecord name="dynamic-toggle.mp4" />
+            <ScreenRecord name="dynamic-toggle" />
           </ComponentContainer>
 
           <ComponentContainer href={!isXS ? "/cred" : null}>
-            <ScreenRecord name="cred.mp4" />
+            <ScreenRecord name="cred" />
           </ComponentContainer>
 
           <ComponentContainer href="/dog-avatar">
-            <ScreenRecord name="dog-avatar.mp4" />
+            <ScreenRecord name="dog-avatar" />
           </ComponentContainer>
         </div>
 
         {/* 2nd Grid */}
         <div className="flex flex-col gap-y-10 mt-10">
           <ComponentContainer href={!isXS ? "/yume" : null}>
-            <ScreenRecord name="yume-long.mp4" />
+            <ScreenRecord name="yume" />
           </ComponentContainer>
 
           <ComponentContainer href="/password-reveal" className="bg-[#589fc6]">
-            <ScreenRecord name="password-reveal.mp4" />
+            <ScreenRecord name="password-reveal" />
           </ComponentContainer>
 
           <ComponentContainer href={!isXS ? "/alltrails" : null}>
-            <ScreenRecord name="trails.mp4" />
+            <ScreenRecord name="trails" />
           </ComponentContainer>
         </div>
 
         {/* 3rd Grid */}
         <div className="flex flex-col gap-y-10">
           <ComponentContainer href="/finta">
-            <ScreenRecord name="transactions.mp4" />
+            <ScreenRecord name="transactions" />
           </ComponentContainer>
 
           <ComponentContainer href={!isXS ? "/joi" : null}>
-            <ScreenRecord name="draggable-calendar.mp4" />
+            <ScreenRecord name="draggable-calendar" />
           </ComponentContainer>
 
           <ComponentContainer href="/stepper">
-            <ScreenRecord name="steps.mp4" />
+            <ScreenRecord name="steps" />
           </ComponentContainer>
 
           <ComponentContainer href="/popup-card">
-            <ScreenRecord name="popup-card.mp4" />
+            <ScreenRecord name="popup-card" />
           </ComponentContainer>
 
           {/* <ComponentContainer href="/nutrition-calculator">
-            <ScreenRecord name="nutrition-calculator.mp4" />
+            <ScreenRecord name="nutrition-calculator" />
           </ComponentContainer> */}
         </div>
       </section>
@@ -149,11 +150,6 @@ Hello W🌏RLD!
           title="The Easiest Way To Copy Animation Timing"
           subtitle="Hint: it isn’t math, it’s rhythm"
         />
-        {/* <WritingItem
-          href="#"
-          title="Lorem Ipsum"
-          subtitle="Dolor sit amet consectetur adipiscing elit"
-        /> */}
       </section>
 
       <div className="h-14 sm:h-32" />
@@ -163,7 +159,12 @@ Hello W🌏RLD!
       <footer className="w-full max-w-[1146px] flex flex-col sm:flex-row justify-between text-base pt-10 px-6">
         <div className="flex flex-col sm:flex-row gap-x-10">
           <p>
-            <a href="https://x.com/hriosnl" target="_blank" className="link">
+            <a
+              href="https://x.com/hriosnl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link"
+            >
               x.com/@hriosnl
             </a>
           </p>
@@ -181,8 +182,16 @@ Hello W🌏RLD!
 
 const ScreenRecord = ({ name }: { name: string }) => {
   return (
-    <video width="800" preload="none" autoPlay muted playsInline loop>
-      <source src={`/videos/${name}`} type="video/mp4" />
+    <video
+      width="800"
+      poster={`/images/thumbnails/${name}.png`}
+      preload="none"
+      autoPlay
+      muted
+      playsInline
+      loop
+    >
+      <source src={`/videos/${name}.mp4`} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   );

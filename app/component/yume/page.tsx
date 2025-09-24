@@ -38,11 +38,6 @@ function Title({ isFolded }: { isFolded: boolean }) {
       className="absolute top-0 left-0 w-full flex flex-col items-center pt-3"
       initial={{ opacity: 0 }}
       animate={{ opacity: isFolded ? 1 : 0, y: isFolded ? 0 : -150 }}
-      // transition={{
-      //   type: "spring",
-      //   stiffness: 100,
-      //   damping: 15,
-      // }}
       transition={slightBounce}
     >
       <h5 className={cn("text-white text-lg", ibmPlexSerif.className)}>
@@ -64,11 +59,6 @@ function Calendar({ isFolded }: { isFolded: boolean }) {
       )}
       initial={{ opacity: 0 }}
       animate={{ opacity: isFolded ? 1 : 0, y: isFolded ? 60 : 180 }}
-      // transition={{
-      //   type: "spring",
-      //   stiffness: 100,
-      //   damping: 15,
-      // }}
       transition={slightBounce}
     >
       <svg
@@ -129,23 +119,18 @@ function Book({
   const customEase: Easing = [0.215, 0.61, 0.355, 1];
 
   function onDragEnd(_event: PointerEvent, info: PanInfo) {
-    console.log("drag offset: ", info.offset.x, info.offset.y);
-
     if (info.offset.y > 80 && !isLocked) {
       setIsLocked(true);
     }
   }
 
   useEffect(() => {
-    console.log("isLocked: ", isLocked);
-
     if (isLocked) {
       animate(
         scope.current,
         { scale: 0.8, y: 80, height: "70%" },
         { ease: customEase, duration: 0.3, delay: 0.2 }
       ).finished.then(() => {
-        console.log("Animation finished. Folding...");
         setIsFolded(true);
         handleSetIsFolded(true);
       });
@@ -154,7 +139,6 @@ function Book({
         scope.current,
         { scale: 1, y: 0, height: "100%" },
         { ease: customEase, duration: 0.3, delay: 0.2 }
-        // { type: "spring", duration: 0.4, bounce: 0.5, delay: 0.3 }
       );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -165,9 +149,6 @@ function Book({
       ref={scope}
       className={cn("h-full", notoSerif.className)}
       drag={isFolded ? false : "y"}
-      // dragConstraints={
-      //   isLocked ? { top: 200, bottom: 200 } : { top: 0, bottom: 0 }
-      // }
       dragConstraints={{ top: 0, bottom: 0 }}
       dragElastic={0.8}
       dragMomentum={false}
@@ -275,7 +256,6 @@ function Book({
             </div>
           </motion.div>
 
-          {/* <div className="bg-[#EBE3D5] h-4 w-full rounded-b-3xl absolute -bottom-1 left-0 z-0" /> */}
           <motion.div
             className="bg-[#B0A695] h-1/2 w-full rounded-b-3xl absolute -bottom-2 left-0 z-10"
             style={{
@@ -334,9 +314,6 @@ const DateHeader = () => {
 
 const foldingTransition: Transition = {
   type: "spring",
-  // stiffness: 150,
-  // damping: 8,
-  // delay: 0.5,
   duration: 0.8,
   bounce: 0.6,
 };

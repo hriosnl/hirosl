@@ -15,10 +15,6 @@ export default function Page() {
 function PaperPlaneWithTrails() {
   const [isHovered, setIsHovered] = useState(false);
 
-  useEffect(() => {
-    console.log("isHovered", isHovered);
-  }, [isHovered]);
-
   return (
     <div className="flex flex-col justify-start items-center">
       <div className="relative w-48 h-48">

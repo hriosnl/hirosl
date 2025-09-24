@@ -4,11 +4,9 @@ import { Funnel_Display } from "next/font/google";
 import { ArrowLeft } from "lucide-react";
 import { motion, useMotionValue, animate, Transition } from "motion/react";
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 
 import Image from "next/image";
 import { Iphone } from "@zuude-ui/ios-mockups";
-import BackHome from "@/components/ui/BackHome";
 
 const funnelDisplay = Funnel_Display({ subsets: ["latin"] });
 

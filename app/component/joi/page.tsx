@@ -1,6 +1,5 @@
 "use client";
 
-import BackHome from "@/components/ui/BackHome";
 import { cn } from "@/lib/utils";
 import { Iphone } from "@zuude-ui/ios-mockups";
 import { Check, SquareCheck, CalendarDays } from "lucide-react";

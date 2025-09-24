@@ -12,7 +12,7 @@ const nunitoSans = Nunito_Sans({
 
 export const metadata: Metadata = {
   title: "Hiro San Lorenzo",
-  description: "Design Engineer",
+  description: "My personal website as a design engineer",
 };
 
 export default function RootLayout({

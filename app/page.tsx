@@ -44,10 +44,10 @@ Hello W🌏RLD!
           <LowPolyPortrait className="relative mx-auto" />
         </div>
         <p className={cn("self-center text-2xl mt-2", sourceCodePro.className)}>
-          Hi, I'm Hiro
+          Hi, I&apos;m Hiro
         </p>
         <p className="mt-7">
-          I'm a design engineer. I help people turn ideas into polished
+          I&rsquo;m a design engineer. I help people turn ideas into polished
           experiences without sacrificing speed or quality.
         </p>
         <div className="flex flex-col gap-y-7 sm:flex-row justify-between mt-7 opacity-80">

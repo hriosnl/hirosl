@@ -23,6 +23,16 @@ export default function DogAvatar() {
     },
   ] = useMeasure();
 
+  // Create refs for each dog circle - call hooks at top level
+  const dogCircleRef0 = useMeasure();
+  const dogCircleRef1 = useMeasure();
+  const dogCircleRef2 = useMeasure();
+  const dogCircleRef3 = useMeasure();
+  const dogCircleRef4 = useMeasure();
+  const dogCircleRef5 = useMeasure();
+
+  const dogCircleRefs = [dogCircleRef0, dogCircleRef1, dogCircleRef2, dogCircleRef3, dogCircleRef4, dogCircleRef5];
+
   const getDestination = ({
     dogCircleBounds,
     dogId,
@@ -147,8 +157,8 @@ export default function DogAvatar() {
       </div>
 
       <div className="flex gap-x-3">
-        {Dogs.map((dog) => {
-          const [dogCircleRef, dogCircleBounds] = useMeasure();
+        {Dogs.map((dog, index) => {
+          const [dogCircleRef, dogCircleBounds] = dogCircleRefs[index];
 
           const destination = getDestination({
             dogCircleBounds,

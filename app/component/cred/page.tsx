@@ -6,7 +6,6 @@ import { motion, useMotionValue, animate } from "motion/react";
 import { useEffect, useState } from "react";
 import { Iphone } from "@zuude-ui/ios-mockups";
 import NumberFlow from "@number-flow/react";
-import BackHome from "@/components/ui/BackHome";
 
 const domine = Domine({ subsets: ["latin"] });
 const jost = Jost({ subsets: ["latin"] });

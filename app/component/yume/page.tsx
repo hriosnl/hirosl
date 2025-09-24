@@ -6,7 +6,6 @@ import { motion, useAnimate, PanInfo, Transition, Easing } from "motion/react";
 import { useEffect, useState } from "react";
 import { CircleDot, ChevronRight } from "lucide-react";
 import { IBM_Plex_Serif, Noto_Serif, Bodoni_Moda } from "next/font/google";
-import BackHome from "@/components/ui/BackHome";
 
 const ibmPlexSerif = IBM_Plex_Serif({
   subsets: ["latin"],

@@ -79,7 +79,9 @@ export default function Page() {
           />
           Your browser does not support the video tag.
         </video>
-        <figcaption className="italic">"Shueeshuee-ooow, poink!"</figcaption>
+        <figcaption className="italic">
+          &quot;Shueeshuee-ooow, poink!&quot;
+        </figcaption>
       </figure>
       <p>Now here’s the sound I made while watching it:</p>
       <div className="flex justify-center pb-5">
@@ -128,7 +130,7 @@ export default function Page() {
       </p>
 
       <h2>Another Example</h2>
-      <p>Here's the component with animation:</p>
+      <p>Here’s the component with animation:</p>
       <figure>
         <video preload="none" autoPlay muted playsInline loop>
           <source
@@ -138,7 +140,7 @@ export default function Page() {
           Your browser does not support the video tag.
         </video>
         <figcaption className="italic">
-          "Shhhhhhhhhh-whiishk-fheeeow..."
+          &quot;Shhhhhhhhhh-whiishk-fheeeow...&quot;
         </figcaption>
       </figure>
       <p>Here’s the sound I made while watching it:</p>

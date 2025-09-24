@@ -300,7 +300,7 @@ const Dogs = [
   },
   {
     id: 3,
-    src: "/images/dogs/dog-green.web p",
+    src: "/images/dogs/dog-green.webp",
     bark: "Ham",
     color: "#55aa62",
   },

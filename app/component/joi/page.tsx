@@ -8,9 +8,14 @@ import { useState } from "react";
 
 export default function Page() {
   return (
-    <Iphone size="md" color="natural-titanium" className="hidden sm:block">
-      <DraggableCalendar />
-    </Iphone>
+    <>
+      <Iphone size="md" color="natural-titanium" className="hidden sm:block">
+        <DraggableCalendar />
+      </Iphone>
+      <div className="size-full sm:hidden">
+        <DraggableCalendar />
+      </div>
+    </>
   );
 }
 

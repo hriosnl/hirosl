@@ -13,14 +13,9 @@ const familjenGrotesk = Familjen_Grotesk({ subsets: ["latin"] });
 
 export default function Page() {
   return (
-    <>
-      <Iphone size="md" color="black-titanium" className="hidden sm:block">
-        <CredSlider />
-      </Iphone>
-      <div className="sm:hidden size-full max-h-[800px] overflow-hidden">
-        <CredSlider />
-      </div>
-    </>
+    <Iphone size="md" color="black-titanium">
+      <CredSlider />
+    </Iphone>
   );
 }
 
@@ -37,7 +32,7 @@ function CredSlider() {
     <div
       className={cn(
         familjenGrotesk.className,
-        "flex flex-col h-full text-white pt-10 pb-5 sm:py-16 sm:space-y-10 bg-black"
+        "flex flex-col h-full text-white py-16 space-y-10"
       )}
     >
       <div className="flex-1 flex flex-col items-center gap-y-3">
@@ -65,10 +60,10 @@ function CredSlider() {
       </div>
 
       <div className="h-[240px] relative">
-        {/* <div className="w-full h-[3px] bg-white/5 absolute top-0" />
+        <div className="w-full h-[3px] bg-white/5 absolute top-0" />
         <div className="w-full h-[3px] bg-white/5 absolute bottom-0" />
         <div className="w-full h-[3px] bg-white/5 absolute top-1/3" />
-        <div className="w-full h-[3px] bg-white/5 absolute bottom-1/3" /> */}
+        <div className="w-full h-[3px] bg-white/5 absolute bottom-1/3" />
 
         <BarGraph amount={amount} />
       </div>
@@ -89,7 +84,7 @@ function CredSlider() {
         />
         <LinearGauge handleSetAmount={setAmount} />
         <motion.button
-          className="w-[340px] h-12 bg-white text-black text-sm font-semibold hidden sm:block"
+          className="w-[340px] h-12 bg-white text-black text-sm font-semibold"
           whileTap={{ scale: 0.99 }}
         >
           Continue

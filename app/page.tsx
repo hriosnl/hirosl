@@ -6,13 +6,12 @@ import { Source_Code_Pro } from "next/font/google";
 import Link from "next/link";
 import LowPolyPortrait from "@/components/LowPolyPortrait";
 import useTimePeriod from "@/hooks/useTimePeriod";
-import useBreakpoint from "@/hooks/useBreakpoint";
+import ContactButton from "@/components/ui/ContactButton";
 
 const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 
 export default function Home() {
   const timePeriod = useTimePeriod();
-  const isXS = useBreakpoint("xs");
 
   useEffect(() => {
     let credits = `
@@ -35,6 +34,8 @@ Hello W🌏RLD!
 
   return (
     <div className="flex flex-col items-center py-10 mx-auto text-lg">
+      <ContactButton />
+
       <main className="sm:w-[564px] p-6 sm:p-10 sm:shadow-[inset_0_1px_2px_#00000040] rounded-3xl flex flex-col">
         <div className="relative">
           {/* <div className="size-80 bg-[hsl(0,0%,70%)] rounded-full absolute hidden sm:block sm:left-[80px] -top-4" /> */}
@@ -47,7 +48,7 @@ Hello W🌏RLD!
           Hi, I&apos;m Hiro
         </p>
         <p className="mt-7">
-          I&rsquo;m a design engineer. I help people turn ideas into polished
+          I&rsquo;m a design engineer. I help people turn ideas into beautiful
           experiences without sacrificing speed or quality.
         </p>
         <div className="flex flex-col gap-y-7 sm:flex-row justify-between mt-7 opacity-80">
@@ -92,7 +93,7 @@ Hello W🌏RLD!
             <ScreenRecord name="dynamic-toggle" />
           </ComponentContainer>
 
-          <ComponentContainer href={!isXS ? "/cred" : null}>
+          <ComponentContainer href="/cred">
             <ScreenRecord name="cred" />
           </ComponentContainer>
 
@@ -103,7 +104,7 @@ Hello W🌏RLD!
 
         {/* 2nd Grid */}
         <div className="flex flex-col gap-y-10 mt-10">
-          <ComponentContainer href={!isXS ? "/yume" : null}>
+          <ComponentContainer href="/yume">
             <ScreenRecord name="yume" />
           </ComponentContainer>
 
@@ -111,8 +112,8 @@ Hello W🌏RLD!
             <ScreenRecord name="password-reveal" />
           </ComponentContainer>
 
-          <ComponentContainer href={!isXS ? "/alltrails" : null}>
-            <ScreenRecord name="trails" />
+          <ComponentContainer href="/alltrails">
+            <ScreenRecord name="alltrails" />
           </ComponentContainer>
         </div>
 
@@ -122,7 +123,7 @@ Hello W🌏RLD!
             <ScreenRecord name="transactions" />
           </ComponentContainer>
 
-          <ComponentContainer href={!isXS ? "/joi" : null}>
+          <ComponentContainer href="/joi">
             <ScreenRecord name="draggable-calendar" />
           </ComponentContainer>
 
@@ -133,10 +134,6 @@ Hello W🌏RLD!
           <ComponentContainer href="/popup-card">
             <ScreenRecord name="popup-card" />
           </ComponentContainer>
-
-          {/* <ComponentContainer href="/nutrition-calculator">
-            <ScreenRecord name="nutrition-calculator" />
-          </ComponentContainer> */}
         </div>
       </section>
 
@@ -223,12 +220,12 @@ const ComponentContainer = ({
   className,
   children,
 }: {
-  href: string | null;
+  href: string;
   className?: string;
   children: React.ReactNode;
 }) => {
   return (
-    <Link href={!href ? "/component/not-available" : `/component/${href}`}>
+    <Link href={href}>
       <div
         className={cn(
           "p-10 border border-[#E9E9E9] bg-white rounded-3xl sm:mx-0 transition-shadow duration-300 ease-in-out hover:shadow-[inset_0_4px_8px_rgba(0,0,0,0.1)]",

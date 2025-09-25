@@ -22,9 +22,14 @@ interface CarouselItem {
 
 export default function Page() {
   return (
-    <Iphone size="md" color="natural-titanium">
-      <Carousel />
-    </Iphone>
+    <>
+      <Iphone size="md" color="natural-titanium" className="hidden sm:block">
+        <Carousel />
+      </Iphone>
+      <div className="sm:hidden size-full max-w-[400px] max-h-[800px]">
+        <Carousel />
+      </div>
+    </>
   );
 }
 
@@ -151,7 +156,7 @@ function Carousel() {
         ))}
       </motion.div>
 
-      <div className="absolute bottom-0 left-0 w-full h-56 bg-white shadow-2xl p-6 space-y-7">
+      <div className="absolute bottom-0 left-0 w-full h-56 bg-white shadow-2xl p-6 space-y-7 hidden sm:block">
         <ArrowLeft className="size-6" />
         <h1 className="text-2xl font-medium">Settings</h1>
         <div className="flex flex-col space-y-1">
@@ -178,8 +183,8 @@ const CAROUSEL_ITEMS: CarouselItem[] = [
     image: "/images/doodles/doodle-2.png",
     width: 216,
     height: 216,
-    title: "Chat Thread",
-    content: "1,021 msgs",
+    title: "Chat Duration",
+    content: "10h 12m",
     color: "bg-gradient-to-br from-green-500 to-teal-600",
   },
   {
@@ -187,8 +192,8 @@ const CAROUSEL_ITEMS: CarouselItem[] = [
     image: "/images/doodles/doodle-3.png",
     width: 180,
     height: 180,
-    title: "Battery Capacity",
-    content: "18,000 mAh",
+    title: "Battery Life",
+    content: "5h 41m",
     color: "bg-gradient-to-br from-pink-500 to-rose-600",
   },
   {

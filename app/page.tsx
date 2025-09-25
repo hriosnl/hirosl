@@ -225,7 +225,7 @@ const ComponentContainer = ({
   children: React.ReactNode;
 }) => {
   return (
-    <Link href={href}>
+    <Link href={`/component/${href}`}>
       <div
         className={cn(
           "p-10 border border-[#E9E9E9] bg-white rounded-3xl sm:mx-0 transition-shadow duration-300 ease-in-out hover:shadow-[inset_0_4px_8px_rgba(0,0,0,0.1)]",

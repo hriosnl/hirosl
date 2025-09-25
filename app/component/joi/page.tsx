@@ -12,7 +12,7 @@ export default function Page() {
       <Iphone size="md" color="natural-titanium" className="hidden sm:block">
         <DraggableCalendar />
       </Iphone>
-      <div className="size-full sm:hidden">
+      <div className="size-full max-w-[400px] max-h-[800px] sm:hidden">
         <DraggableCalendar />
       </div>
     </>

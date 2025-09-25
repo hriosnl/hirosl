@@ -85,53 +85,56 @@ Hello W🌏RLD!
       >
         {/* 1st Grid */}
         <div className="flex flex-col gap-y-10">
-          <ComponentContainer href="/notion" className="bg-[#fef9f2]">
+          <ComponentContainer pageName="notion" className="bg-[#fef9f2]">
             <ScreenRecord name="pupinmail" />
           </ComponentContainer>
 
-          <ComponentContainer href="/dynamic-toggle">
+          <ComponentContainer pageName="dynamic-toggle">
             <ScreenRecord name="dynamic-toggle" />
           </ComponentContainer>
 
-          <ComponentContainer href="/cred">
+          <ComponentContainer pageName="cred">
             <ScreenRecord name="cred" />
           </ComponentContainer>
 
-          <ComponentContainer href="/dog-avatar">
+          <ComponentContainer pageName="dog-avatar">
             <ScreenRecord name="dog-avatar" />
           </ComponentContainer>
         </div>
 
         {/* 2nd Grid */}
         <div className="flex flex-col gap-y-10 mt-10">
-          <ComponentContainer href="/yume">
+          <ComponentContainer pageName="yume">
             <ScreenRecord name="yume" />
           </ComponentContainer>
 
-          <ComponentContainer href="/password-reveal" className="bg-[#589fc6]">
+          <ComponentContainer
+            pageName="password-reveal"
+            className="bg-[#589fc6]"
+          >
             <ScreenRecord name="password-reveal" />
           </ComponentContainer>
 
-          <ComponentContainer href="/alltrails">
+          <ComponentContainer pageName="alltrails">
             <ScreenRecord name="alltrails" />
           </ComponentContainer>
         </div>
 
         {/* 3rd Grid */}
         <div className="flex flex-col gap-y-10">
-          <ComponentContainer href="/finta">
+          <ComponentContainer pageName="finta">
             <ScreenRecord name="transactions" />
           </ComponentContainer>
 
-          <ComponentContainer href="/joi">
+          <ComponentContainer pageName="joi">
             <ScreenRecord name="draggable-calendar" />
           </ComponentContainer>
 
-          <ComponentContainer href="/stepper">
+          <ComponentContainer pageName="stepper">
             <ScreenRecord name="steps" />
           </ComponentContainer>
 
-          <ComponentContainer href="/popup-card">
+          <ComponentContainer pageName="popup-card">
             <ScreenRecord name="popup-card" />
           </ComponentContainer>
         </div>
@@ -216,16 +219,16 @@ const ScreenRecord = ({ name }: { name: string }) => {
 };
 
 const ComponentContainer = ({
-  href,
+  pageName,
   className,
   children,
 }: {
-  href: string;
+  pageName: string;
   className?: string;
   children: React.ReactNode;
 }) => {
   return (
-    <Link href={`/component/${href}`}>
+    <Link href={`/component/${pageName}`}>
       <div
         className={cn(
           "p-10 border border-[#E9E9E9] bg-white rounded-3xl sm:mx-0 transition-shadow duration-300 ease-in-out hover:shadow-[inset_0_4px_8px_rgba(0,0,0,0.1)]",

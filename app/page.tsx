@@ -143,16 +143,16 @@ Hello W🌏RLD!
       <div className="h-14 sm:h-32" />
 
       {/* Writing */}
-      <section id="writing" className="sm:w-[564px] px-4 sm:px-0">
+      {/* <section id="writing" className="sm:w-[564px] px-4 sm:px-0">
         <h1 className="font-semibold p-3">Writing</h1>
         <WritingItem
           href="/writing/the-easiest-way-to-copy-animation-timing"
           title="The Easiest Way To Copy Animation Timing"
           subtitle="Hint: it isn’t math, it’s rhythm"
         />
-      </section>
+      </section> */}
 
-      <div className="h-14 sm:h-32" />
+      {/* <div className="h-14 sm:h-32" /> */}
 
       {/* Footer */}
       <div className="w-full border-t border-t-[#E9E9E9] sm:px-0" />

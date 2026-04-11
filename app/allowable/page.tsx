@@ -60,7 +60,7 @@ export default function FuturisticCounter() {
       <div className="relative z-10 flex flex-col items-center">
         {/* Label */}
         <div className="mb-8 tracking-[0.5em] text-red-500/70 text-sm font-light uppercase">
-          NEURAL CORE
+          ALLOWABLE 007デ
         </div>
 
         {/* Huge Number */}
@@ -84,13 +84,13 @@ export default function FuturisticCounter() {
 
         {/* Subtitle */}
         <div className="mt-6 text-red-400/60 text-xl tracking-[0.25em] font-light">
-          ALLOWABLE ❤️&🍑
+          NON-CORE DEVICE ALLOWABLE FOR SCIENTIFIC AND INDUSTRIAL USE ONLY
         </div>
       </div>
 
       {/* HUD Elements */}
       <div className="absolute top-8 left-8 text-red-500/40 text-xs font-mono tracking-widest">
-        SYSTEM v2.4.11 • ONLINE
+        SYSTEM v4.2.11 • ONLINE
       </div>
 
       {/* Working UTC Time */}

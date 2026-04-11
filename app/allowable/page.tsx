@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function FuturisticCounter() {
-  const [count, setCount] = useState(6);
+  const [count, setCount] = useState(5);
   const [isGlitching, setIsGlitching] = useState(false);
   const [utcTime, setUtcTime] = useState("");
 

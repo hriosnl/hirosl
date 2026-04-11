@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { motion } from "motion/react";
 
 export default function FuturisticCounter() {
   const [count, setCount] = useState(5);
@@ -59,32 +60,41 @@ export default function FuturisticCounter() {
 
       <div className="relative z-10 flex flex-col items-center">
         {/* Label */}
-        <div className="mb-8 tracking-[0.5em] text-red-500/70 text-sm font-light uppercase">
-          ALLOWABLE 007デ
+        <div className="mb-12 tracking-[0.5em] text-red-500/70 text-lg font-light uppercase">
+          007デ ALLOWABLE
         </div>
 
         {/* Huge Number */}
-        <div
+        <motion.div
+          animate={{
+            scale: [1, 1.22, 1],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            times: [0, 0.2, 1], // quick beat + slow return
+            ease: "easeOut",
+          }}
           // onClick={handleClick}
           className={`
             text-[28vw] md:text-[22vw] lg:text-[280px] 
             font-black leading-none tracking-[-0.05em]
             text-transparent bg-clip-text bg-gradient-to-b from-red-400 via-red-500 to-red-600
-            drop-shadow-[0_0_80px_#ff0000] 
+            drop-shadow-[0_0_220px_#ff0000] 
             transition-all duration-200 cursor-pointer select-none
             ${isGlitching ? "animate-[glitch_0.25s_linear_infinite]" : ""}
           `}
           style={{
             textShadow:
-              "0 0 60px #ff0000, 0 0 120px #ff0000, 0 0 180px #990000",
+              "0 0 60px #ff0000, 0 0 120px #ff0000, 0 0 100px #990000",
           }}
         >
           {count.toString().padStart(2, "0")}
-        </div>
+        </motion.div>
 
         {/* Subtitle */}
-        <div className="mt-6 text-red-400/60 text-xl tracking-[0.25em] font-light">
-          NON-CORE DEVICE ALLOWABLE FOR SCIENTIFIC AND INDUSTRIAL USE ONLY
+        <div className="mt-20 text-red-400/60 text-xs tracking-[0.25em] font-light">
+          NON-CORE DEVICE AUTHORIZED FOR SCIENTIFIC AND INDUSTRIAL USE ONLY
         </div>
       </div>
 

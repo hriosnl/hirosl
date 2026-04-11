@@ -35,7 +35,6 @@ Hello W🌏RLD!
   return (
     <div className="flex flex-col items-center py-10 mx-auto text-lg">
       <ContactButton />
-
       <main className="sm:w-[564px] p-6 sm:p-10 sm:shadow-[inset_0_1px_2px_#00000040] rounded-3xl flex flex-col">
         <div className="relative">
           {/* <div className="size-80 bg-[hsl(0,0%,70%)] rounded-full absolute hidden sm:block sm:left-[80px] -top-4" /> */}
@@ -75,9 +74,7 @@ Hello W🌏RLD!
           </div>
         </div>
       </main>
-
       <div className="h-10 sm:h-20" />
-
       {/* Components */}
       <section
         id="components"
@@ -139,21 +136,18 @@ Hello W🌏RLD!
           </ComponentContainer>
         </div>
       </section>
-
       <div className="h-14 sm:h-32" />
-
       {/* Writing */}
-      {/* <section id="writing" className="sm:w-[564px] px-4 sm:px-0">
+      <section id="writing" className="sm:w-[564px] px-4 sm:px-0">
         <h1 className="font-semibold p-3">Writing</h1>
         <WritingItem
           href="/writing/the-easiest-way-to-copy-animation-timing"
           title="The Easiest Way To Copy Animation Timing"
           subtitle="Hint: it isn’t math, it’s rhythm"
         />
-      </section> */}
+      </section>
 
-      {/* <div className="h-14 sm:h-32" /> */}
-
+      <div className="h-14 sm:h-32" />
       {/* Footer */}
       <div className="w-full border-t border-t-[#E9E9E9] sm:px-0" />
       <footer className="w-full max-w-[1146px] flex flex-col sm:flex-row justify-between text-base pt-10 px-6">
@@ -192,7 +186,7 @@ const ScreenRecord = ({ name }: { name: string }) => {
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (videoRef.current) {
@@ -232,7 +226,7 @@ const ComponentContainer = ({
       <div
         className={cn(
           "p-10 border border-[#E9E9E9] bg-white rounded-3xl sm:mx-0 transition-shadow duration-300 ease-in-out hover:shadow-[inset_0_4px_8px_rgba(0,0,0,0.1)]",
-          className
+          className,
         )}
       >
         {children}

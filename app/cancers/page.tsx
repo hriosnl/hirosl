@@ -30,7 +30,8 @@ export default function CancerStatusChecker() {
     "Jimmy Kimmel",
     "Conan O'Brien",
     "Future rapper",
-    "Eric Weinstein", // ← Added
+    "Eric Weinstein",
+    "Zane Lowe",
   ];
 
   const fetchPersonStatus = async (name: string): Promise<Person> => {
@@ -94,9 +95,15 @@ export default function CancerStatusChecker() {
     const isAlive =
       !hasDeathMention ||
       // Override for known active public figures
-      ["logan", "colbert", "kimmel", "conan", "future", "weinstein"].some((n) =>
-        name.toLowerCase().includes(n),
-      );
+      [
+        "logan",
+        "colbert",
+        "kimmel",
+        "conan",
+        "future",
+        "weinstein",
+        "lowe",
+      ].some((n) => name.toLowerCase().includes(n));
 
     return {
       name: name === "Future rapper" ? "Future" : name,
@@ -119,6 +126,8 @@ export default function CancerStatusChecker() {
     if (name.includes("Conan")) return "Late Night / Podcast Host";
     if (name.includes("Future")) return "Rapper (DJ Khaled Network)";
     if (name.includes("Weinstein")) return "Intellectual / Podcaster";
+    if (name.includes("Lowe"))
+      return "Music Journalist / Annoying Podcast Host";
     return "Public Figure";
   };
 
@@ -135,6 +144,8 @@ export default function CancerStatusChecker() {
       return "Working on new projects in 2026. No credible death reports.";
     if (name.includes("Weinstein"))
       return "Active podcaster and thinker. Recent interviews in 2026 on AI, geopolitics, etc.";
+    if (name.includes("Lowe"))
+      return "Active in music journalism and podcasting. No credible death reports.";
     return "Working on new projects in 2026. No credible death reports.";
   };
 

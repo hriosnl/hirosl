@@ -39,8 +39,9 @@ Hello W🌏RLD!
         <div className="relative">
           {/* <div className="size-80 bg-[hsl(0,0%,70%)] rounded-full absolute hidden sm:block sm:left-[80px] -top-4" /> */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="size-80 bg-[hsl(0,0%,70%)] rounded-full relative -top-[27px]" />
+            <div className="size-80 bg-[hsl(0,100%,42.69%)] rounded-full relative -top-[27px]" />
           </div>
+
           <LowPolyPortrait className="relative mx-auto" />
         </div>
         <p className={cn("self-center text-2xl mt-2", sourceCodePro.className)}>

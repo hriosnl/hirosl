@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 
 export default function FuturisticCounter() {
-  const [count, setCount] = useState(7);
+  const [count, setCount] = useState(9);
   const [isGlitching, setIsGlitching] = useState(false);
   const [utcTime, setUtcTime] = useState("");
 
@@ -40,7 +40,7 @@ export default function FuturisticCounter() {
   // }, []);
 
   useEffect(() => {
-    let credits = `
+    const credits = `
  ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓████████▓▒░      ░▒▓████████▓▒░▒▓██████▓▒░  
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░                ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░ 
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░                ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░ 

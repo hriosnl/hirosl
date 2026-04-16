@@ -257,7 +257,7 @@ export default function CancerStatusChecker() {
         }
 
         .terminal {
-          border: 6px solid #ff0000;
+          // border: 6px solid #ff0000;
           box-shadow:
             0 0 40px #ff0000,
             inset 0 0 30px rgba(255, 0, 0, 0.5);
@@ -292,31 +292,36 @@ export default function CancerStatusChecker() {
           {/* Header */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-10 border-b-4 border-red-600 pb-6 gap-4">
             <div>
-              <h1 className="text-2xl font-bold tracking-widest flex items-center gap-4 text-red-500">
-                <span className="text-4xl">☠️</span>
-                CANCERS WATCHER
+              <h1 className="text-2xl font-bold tracking-widest flex items-baseline gap-1 md:gap-4 text-red-500">
+                <span className="text-lg md:text-5xl">☠️</span>
+                <span className="text-xs md:text-4xl">CANCERS WATCHER</span>
               </h1>
-              <p className="text-xs text-red-400 mt-2">
+              <p className="text-[8px] md:text-xs text-red-400 mt-2 md:mt-10">
                 POWERED BY BRAVE SEARCH API • APRIL 2026
               </p>
             </div>
 
-            <div className="text-right flex flex-col items-end">
-              <div className="text-xs text-red-500 mb-3 font-mono">
+            <div className="text-right flex flex-col-reverse md:flex-col items-end mt-5 md:mt-0 gap-4 md:gap-0">
+              <div className="text-[10px] md:text-xs text-red-500 md:mb-3 font-mono">
                 LAST SCAN: {lastScan || "LOADING..."}
               </div>
               <button
                 onClick={performFullScan}
                 disabled={isScanning}
-                className="px-8 py-3 bg-red-700 hover:bg-red-600 disabled:bg-red-900 text-white font-bold border-4 border-red-400 transition-all active:scale-95 flex items-center gap-3 text-sm disabled:cursor-not-allowed"
+                className="self-center md:self-auto px-2 py-1 md:px-8 md:py-3 bg-red-700 hover:bg-red-600 disabled:bg-red-900 text-white font-bold border-2 border-red-400 transition-all active:scale-95 flex items-center gap-3 text-sm disabled:cursor-not-allowed"
               >
                 {isScanning ? (
                   <>SCANNING BRAVE SEARCH...</>
                 ) : (
                   <>
                     {/* <span className="text-lg">📡</span> */}
-                    <EyeIcon size={42} animate={true} />
-                    <span className="text-xs">RE-SCAN</span>
+                    <span className="hidden md:block ">
+                      <EyeIcon size={42} animate={true} />
+                    </span>
+                    <span className="block md:hidden">
+                      <EyeIcon size={30} animate={true} />
+                    </span>
+                    <span className="text-[9px] md:text-xs">RE-SCAN</span>
                   </>
                 )}
               </button>
@@ -344,18 +349,18 @@ export default function CancerStatusChecker() {
                 className={`border-4 ${person.status === "ALIVE" ? "border-green-600" : "border-red-600"} bg-black/95 p-8 hover:border-opacity-80 transition-colors`}
               >
                 <div className="flex justify-between items-start">
-                  <div className="flex-1 pr-4">
+                  <div className="flex-1 md:pr-4">
                     <div
-                      className={`text-xl font-bold ${person.status === "ALIVE" ? "status-alive" : "status-dead"}`}
+                      className={`text-sm md:text-xl font-bold ${person.status === "ALIVE" ? "status-alive" : "status-dead"}`}
                     >
                       {person.name}
                     </div>
-                    <div className="text-red-400 text-sm mt-1">
+                    <div className="text-red-400 text-[10px] md:text-sm mt-1">
                       {person.category}
                     </div>
 
                     {person.note && (
-                      <div className="mt-6 text-xs leading-relaxed text-red-300 border-l-2 border-red-700 pl-4">
+                      <div className="mt-6 text-[10px] md:text-xs leading-relaxed text-red-300 border-l-2 border-red-700 pl-4">
                         {person.note}
                       </div>
                     )}
@@ -367,9 +372,10 @@ export default function CancerStatusChecker() {
                     )}
                   </div>
 
+                  {/* Desktop */}
                   <div className="text-right shrink-0">
                     <div
-                      className={`inline-flex items-center justify-center px-4 py-1 border-2 font-bold text-lg tracking-widest ${
+                      className={`items-center justify-center px-4 py-1 border-2 font-bold text-lg tracking-widest hidden md:inline-flex ${
                         person.status === "ALIVE"
                           ? "bg-green-950 border-green-500 text-green-400"
                           : "bg-red-950 border-red-500 text-red-400"
@@ -377,6 +383,16 @@ export default function CancerStatusChecker() {
                     >
                       {person.status}
                     </div>
+                  </div>
+                  {/* Mobile */}
+                  <div
+                    className={`relative right-0 bottom-1 md:hidden pb-1 px-1 rounded-full ${
+                      person.status === "ALIVE"
+                        ? "bg-green-950 border-green-500 text-green-400"
+                        : "bg-red-950 border-red-500 text-red-400"
+                    }`}
+                  >
+                    {person.status === "ALIVE" ? "🦠" : "😵"}
                   </div>
                 </div>
 
@@ -398,7 +414,7 @@ export default function CancerStatusChecker() {
           </div>
 
           {/* Footer */}
-          <div className="mt-12 pt-8 border-t border-red-900 text-center text-[10px] text-red-700 font-mono leading-relaxed">
+          <div className="mt-12 pt-0 md:pt-8 border-t border-red-900 text-left md:text-center text-[8px] md:text-[10px] text-red-700 font-mono leading-relaxed">
             Real-time status pulled from Brave Search API on each scan.
             <br />
             All listed individuals currently show as ALIVE based on latest

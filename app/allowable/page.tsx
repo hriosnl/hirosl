@@ -91,15 +91,15 @@ export default function FuturisticCounter() {
 
         {/* Huge Number */}
         <motion.div
-          animate={{
-            scale: [1, 1.22, 1],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            times: [0, 0.2, 1], // quick beat + slow return
-            ease: "easeOut",
-          }}
+          // animate={{
+          //   scale: [1, 1.22, 1],
+          // }}
+          // transition={{
+          //   duration: 5,
+          //   repeat: Infinity,
+          //   times: [0, 0.2, 1], // quick beat + slow return
+          //   ease: "easeOut",
+          // }}
           // onClick={handleClick}
           className={`
             text-[28vw] md:text-[22vw] lg:text-[280px] 

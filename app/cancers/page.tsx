@@ -32,6 +32,7 @@ export default function CancerStatusChecker() {
     "Future rapper",
     "Eric Weinstein",
     "Zane Lowe",
+    "Ali Abdaal",
   ];
 
   const fetchPersonStatus = async (name: string): Promise<Person> => {
@@ -103,6 +104,7 @@ export default function CancerStatusChecker() {
         "future",
         "weinstein",
         "lowe",
+        "abdaal",
       ].some((n) => name.toLowerCase().includes(n));
 
     return {
@@ -128,6 +130,8 @@ export default function CancerStatusChecker() {
     if (name.includes("Weinstein")) return "Intellectual / Podcaster";
     if (name.includes("Lowe"))
       return "Music Journalist / Annoying Podcast Host";
+    if (name.includes("Abdaal"))
+      return "Educator / Podcaster / Overconfident / Smartass / Dumbass / Thot";
     return "Public Figure";
   };
 
@@ -146,6 +150,8 @@ export default function CancerStatusChecker() {
       return "Active podcaster and thinker. Recent interviews in 2026 on AI, geopolitics, etc.";
     if (name.includes("Lowe"))
       return "Active in music journalism and podcasting. No credible death reports.";
+    if (name.includes("Abdaal"))
+      return "Active in education and podcasting. No credible death reports.";
     return "Working on new projects in 2026. No credible death reports.";
   };
 

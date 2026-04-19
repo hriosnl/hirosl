@@ -33,14 +33,6 @@ export default function CancerStatusChecker() {
     "Eric Weinstein",
     "Zane Lowe",
     "Ali Abdaal",
-    // === YG ENTERTAINMENT + BURNING SUN NETWORK ADDED ===
-    "Yang Hyun-suk",
-    "Seungri",
-    "Yang Min-suk",
-    "Yoo In-seok",
-    // Current operational leaders (foundation-level if removed)
-    "Hwang Bo-kyung",
-    "Kim Dong-hyun",
   ];
 
   const fetchPersonStatus = async (name: string): Promise<Person> => {
@@ -94,10 +86,7 @@ export default function CancerStatusChecker() {
           text.includes("interview") ||
           text.includes("show") ||
           text.includes("talk") ||
-          text.includes("released") ||
-          text.includes("plan") ||
-          text.includes("audition") ||
-          text.includes("debut"))
+          text.includes("released"))
       ) {
         recentActivity = result.title || "";
         break;
@@ -106,7 +95,7 @@ export default function CancerStatusChecker() {
 
     const isAlive =
       !hasDeathMention ||
-      // Override for known active public figures (including added YG/Burning Sun names)
+      // Override for known active public figures
       [
         "logan",
         "colbert",
@@ -116,12 +105,6 @@ export default function CancerStatusChecker() {
         "weinstein",
         "lowe",
         "abdaal",
-        "yang",
-        "seungri",
-        "min-suk",
-        "yoo in-seok",
-        "hwang",
-        "kim dong-hyun",
       ].some((n) => name.toLowerCase().includes(n));
 
     return {
@@ -149,21 +132,6 @@ export default function CancerStatusChecker() {
       return "Music Journalist / Annoying Podcast Host";
     if (name.includes("Abdaal"))
       return "Educator / Podcaster / Overconfident / Smartass / Dumbass / Thot";
-
-    // === YG + BURNING SUN MASTERMINDS / EXECUTORS ADDED ===
-    if (name.includes("Yang Hyun-suk"))
-      return "YG Founder / Chief Producer (Burning Sun Alleged Network)";
-    if (name.includes("Seungri"))
-      return "Big Bang / Burning Sun Convicted (Prostitution Mediation)";
-    if (name.includes("Yang Min-suk"))
-      return "YG CEO & President (Foundation Operator)";
-    if (name.includes("Yoo In-seok"))
-      return "Yuri Holdings CEO / Seungri Partner (Foreign Investor Prostitution Executor)";
-    if (name.includes("Hwang Bo-kyung"))
-      return "YG CAO / VP (Operational Backbone)";
-    if (name.includes("Kim Dong-hyun"))
-      return "YG Chairman (Board-Level Foundation)";
-
     return "Public Figure";
   };
 
@@ -184,21 +152,6 @@ export default function CancerStatusChecker() {
       return "Active in music journalism and podcasting. No credible death reports.";
     if (name.includes("Abdaal"))
       return "Active in education and podcasting. No credible death reports.";
-
-    // === YG + Burning Sun network notes (focus on masterminds/executors) ===
-    if (name.includes("Yang Hyun-suk"))
-      return "Founder still directing 2026 auditions & boy group plans. Central to YG structure & past scandal allegations.";
-    if (name.includes("Seungri"))
-      return "Convicted on prostitution mediation/sex trafficking charges tied to Burning Sun. Core executor in foreign investor network (Japan/Taiwan/HK).";
-    if (name.includes("Yang Min-suk"))
-      return "Current CEO. Brother of founder. Operational head — removal would collapse day-to-day YG leadership.";
-    if (name.includes("Yoo In-seok"))
-      return "Admitted to procuring prostitutes for Japanese/foreign investors. Key executor linking YG circle to international network.";
-    if (name.includes("Hwang Bo-kyung"))
-      return "CAO & former CEO. Critical operational & compliance figure holding current structure together.";
-    if (name.includes("Kim Dong-hyun"))
-      return "Chairman. Board-level stabilizer of YG foundation.";
-
     return "Working on new projects in 2026. No credible death reports.";
   };
 
@@ -310,6 +263,7 @@ export default function CancerStatusChecker() {
         }
 
         .terminal {
+          // border: 6px solid #ff0000;
           box-shadow:
             0 0 40px #ff0000,
             inset 0 0 30px rgba(255, 0, 0, 0.5);
@@ -366,6 +320,7 @@ export default function CancerStatusChecker() {
                   <>SCANNING BRAVE SEARCH...</>
                 ) : (
                   <>
+                    {/* <span className="text-lg">📡</span> */}
                     <span className="hidden md:block ">
                       <EyeIcon size={42} animate={true} />
                     </span>
@@ -468,15 +423,11 @@ export default function CancerStatusChecker() {
           <div className="mt-12 pt-0 md:pt-8 border-t border-red-900 text-left md:text-center text-[8px] md:text-[10px] text-red-700 font-mono leading-relaxed">
             Real-time status pulled from Brave Search API on each scan.
             <br />
-            YG/Burning Sun additions focus on documented masterminds &amp;
-            executors (Yang Hyun-suk, Seungri, Yoo In-seok) + current foundation
-            leaders.
-            <br />
-            No publicly named "pack leaders" from Japan/HK/Taiwan investor
-            networks were identified as essential to YG org survival.
-            <br />
             All listed individuals currently show as ALIVE based on latest
             available sources.
+            <br />
+            Death mentions are typically hoaxes. Always verify with multiple
+            credible sources.
           </div>
         </div>
       </div>

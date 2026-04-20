@@ -4,8 +4,10 @@ import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 
 export default function FuturisticCounter() {
-  const [count, setCount] = useState(4);
-  const [isGlitching, setIsGlitching] = useState(false);
+  // const [count, setCount] = useState(4);
+  // const [isGlitching, setIsGlitching] = useState(false);
+  const count = 4;
+  const isGlitching = false;
   const [utcTime, setUtcTime] = useState("");
 
   // Live UTC Time
@@ -64,13 +66,13 @@ export default function FuturisticCounter() {
     console.log(credits);
   }, []);
 
-  const handleClick = () => {
-    setIsGlitching(true);
-    setCount((prev) =>
-      Math.min(999, prev + Math.floor(Math.random() * 11) + 5),
-    );
-    setTimeout(() => setIsGlitching(false), 280);
-  };
+  // const handleClick = () => {
+  //   setIsGlitching(true);
+  //   setCount((prev) =>
+  //     Math.min(999, prev + Math.floor(Math.random() * 11) + 5),
+  //   );
+  //   setTimeout(() => setIsGlitching(false), 280);
+  // };
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] overflow-hidden relative flex items-center justify-center font-mono">

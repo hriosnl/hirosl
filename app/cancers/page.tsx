@@ -251,15 +251,18 @@ export default function CancerStatusChecker() {
 
   // Initial load
   useEffect(() => {
-    const fallbackData: Person[] = targetNames.map((name) => ({
-      name: name === "Future rapper" ? "Future" : name,
-      category: getCategory(name),
-      wiki: `https://en.wikipedia.org/wiki/${encodeURIComponent(name.replace(" rapper", ""))}`,
-      note: getDefaultNote(name),
-      status: "ALIVE",
-      lastActivity: "Initial load",
-      sourceNote: "Click RE-SCAN to fetch live data from Brave Search",
-    }));
+    const fallbackData: Person[] = targetNames.map(
+      (name) => ({
+        name: name === "Future rapper" ? "Future" : name,
+        category: getCategory(name),
+        wiki: `https://en.wikipedia.org/wiki/${encodeURIComponent(name.replace(" rapper", ""))}`,
+        note: getDefaultNote(name),
+        status: "ALIVE",
+        lastActivity: "Initial load",
+        sourceNote: "Click RE-SCAN to fetch live data from Brave Search",
+      }),
+      [targetNames],
+    );
 
     setPersons(fallbackData);
     const now = new Date();
@@ -472,8 +475,8 @@ export default function CancerStatusChecker() {
             executors (Yang Hyun-suk, Seungri, Yoo In-seok) + current foundation
             leaders.
             <br />
-            No publicly named "pack leaders" from Japan/HK/Taiwan investor
-            networks were identified as essential to YG org survival.
+            No publicly named &quot;pack leaders&quot; from Japan/HK/Taiwan
+            investor networks were identified as essential to YG org survival.
             <br />
             All listed individuals currently show as ALIVE based on latest
             available sources.

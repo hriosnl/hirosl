@@ -27,7 +27,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/cancers/page.tsx.BAK"
+    "app/cancers/page.tsx.BAK",
+    "app/cancers/page3.a.tsx.BAK",
+    "app/cancers/page3.tsx.BAK"
   ],
   "exclude": ["node_modules"]
 }

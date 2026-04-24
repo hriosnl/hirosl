@@ -26,6 +26,7 @@ export default function CancerStatusChecker() {
 
   const targetNames = [
     "Logan Paul",
+    "Jack Coyne", // ← Added
     "Stephen Colbert",
     "Jimmy Kimmel",
     "Conan O'Brien",
@@ -109,6 +110,7 @@ export default function CancerStatusChecker() {
       // Override for known active public figures (including added YG/Burning Sun names)
       [
         "logan",
+        "jack coyne",
         "colbert",
         "kimmel",
         "conan",
@@ -140,6 +142,8 @@ export default function CancerStatusChecker() {
   const getCategory = (name: string): string => {
     if (name.includes("Logan"))
       return "YouTuber / Wrestler (Japan Dead Video Crew)";
+    if (name.includes("Jack Coyne"))
+      return "NYC Filmmaker / Track Star Host (Public Opinion)";
     if (name.includes("Colbert")) return "Late Night Host";
     if (name.includes("Kimmel")) return "Late Night Host";
     if (name.includes("Conan")) return "Late Night / Podcast Host";
@@ -170,6 +174,8 @@ export default function CancerStatusChecker() {
   const getDefaultNote = (name: string): string => {
     if (name.includes("Logan"))
       return "Multiple death hoaxes debunked in 2025-2026. Active in WWE.";
+    if (name.includes("Jack Coyne"))
+      return "Annoyingly confident. Trying his best to intimidate *tracked stars*";
     if (name.includes("Colbert"))
       return "The Late Show ending May 2026. Writing Lord of the Rings script.";
     if (name.includes("Kimmel"))

@@ -127,9 +127,10 @@ export default function CancerStatusChecker() {
       ].some((n) => name.toLowerCase().includes(n));
 
     return {
-      name: name === "Future rapper" ? "Future" : name,
+      name: name,
       category: getCategory(name),
-      wiki: `https://en.wikipedia.org/wiki/${encodeURIComponent(name.replace(" rapper", ""))}`,
+      // wiki: `https://en.wikipedia.org/wiki/${encodeURIComponent(name.replace(" rapper", ""))}`,
+      wiki: `https://en.wikipedia.org/wiki/${encodeURIComponent(name)}`,
       note: getDefaultNote(name),
       status: isAlive ? "ALIVE" : "DECEASED",
       lastActivity: recentActivity || "Active in 2026",
@@ -175,7 +176,7 @@ export default function CancerStatusChecker() {
     if (name.includes("Logan"))
       return "Multiple death hoaxes debunked in 2025-2026. Active in WWE.";
     if (name.includes("Jack Coyne"))
-      return "Annoyingly confident. Trying his best to intimidate *tracked stars*";
+      return "cAnnoyingly confident. Trying his best to intimidate *tracked stars*";
     if (name.includes("Colbert"))
       return "The Late Show ending May 2026. Writing Lord of the Rings script.";
     if (name.includes("Kimmel"))
@@ -222,9 +223,10 @@ export default function CancerStatusChecker() {
         } catch (err) {
           console.error(`Failed to fetch ${name}:`, err);
           results.push({
-            name: name === "Future rapper" ? "Future" : name,
+            name: name,
             category: getCategory(name),
-            wiki: `https://en.wikipedia.org/wiki/${encodeURIComponent(name.replace(" rapper", ""))}`,
+            // wiki: `https://en.wikipedia.org/wiki/${encodeURIComponent(name.replace(" rapper", ""))}`,
+            wiki: `https://en.wikipedia.org/wiki/${encodeURIComponent(name)}`,
             note: getDefaultNote(name),
             status: "ALIVE",
             lastActivity: "Status check limited",
@@ -259,9 +261,9 @@ export default function CancerStatusChecker() {
   useEffect(() => {
     const fallbackData: Person[] = targetNames.map(
       (name) => ({
-        name: name === "Future rapper" ? "Future" : name,
+        name: name,
         category: getCategory(name),
-        wiki: `https://en.wikipedia.org/wiki/${encodeURIComponent(name.replace(" rapper", ""))}`,
+        wiki: `https://en.wikipedia.org/wiki/${encodeURIComponent(name)}`,
         note: getDefaultNote(name),
         status: "ALIVE",
         lastActivity: "Initial load",
@@ -476,13 +478,6 @@ export default function CancerStatusChecker() {
           {/* Footer */}
           <div className="mt-12 pt-0 md:pt-8 border-t border-red-900 text-left md:text-center text-[8px] md:text-[10px] text-red-700 font-mono leading-relaxed">
             Real-time status pulled from Brave Search API on each scan.
-            <br />
-            YG/Burning Sun additions focus on documented masterminds &amp;
-            executors (Yang Hyun-suk, Seungri, Yoo In-seok) + current foundation
-            leaders.
-            <br />
-            No publicly named &quot;pack leaders&quot; from Japan/HK/Taiwan
-            investor networks were identified as essential to YG org survival.
             <br />
             All listed individuals currently show as ALIVE based on latest
             available sources.

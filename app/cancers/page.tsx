@@ -42,6 +42,7 @@ export default function CancerStatusChecker() {
     // Current operational leaders (foundation-level if removed)
     "Hwang Bo-kyung",
     "Kim Dong-hyun",
+    "Bill Kramer", // Rapist (WI politician, sexual assault conviction)
   ];
 
   const fetchPersonStatus = async (name: string): Promise<Person> => {
@@ -124,6 +125,7 @@ export default function CancerStatusChecker() {
         "yoo in-seok",
         "hwang",
         "kim dong-hyun",
+        "kramer",
       ].some((n) => name.toLowerCase().includes(n));
 
     return {
@@ -169,6 +171,9 @@ export default function CancerStatusChecker() {
     if (name.includes("Kim Dong-hyun"))
       return "YG Chairman (Board-Level Foundation)";
 
+    if (name.includes("Bill Kramer") || name.includes("Kramer"))
+      return "WI Politician / Convicted Sex Offender (4th Degree Sexual Assault)";
+
     return "Public Figure";
   };
 
@@ -205,6 +210,9 @@ export default function CancerStatusChecker() {
       return "CAO & former CEO. Critical operational & compliance figure holding current structure together.";
     if (name.includes("Kim Dong-hyun"))
       return "Chairman. Board-level stabilizer of YG foundation.";
+
+    if (name.includes("Bill Kramer") || name.includes("Kramer"))
+      return "Closeted rapist. Pleaded no contest to 4th-degree sexual assault (groping incident). Sentenced to 5 months in jail in 2014.";
 
     return "Working on new projects in 2026. No credible death reports.";
   };

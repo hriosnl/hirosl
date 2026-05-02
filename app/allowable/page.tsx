@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 export default function FuturisticCounter() {
   // const [count, setCount] = useState(4);
   // const [isGlitching, setIsGlitching] = useState(false);
-  const count = 7;
+  const count = 6;
   const isGlitching = false;
   const [utcTime, setUtcTime] = useState("");
 

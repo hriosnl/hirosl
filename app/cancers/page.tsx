@@ -43,6 +43,7 @@ export default function CancerStatusChecker() {
     "Hwang Bo-kyung",
     "Kim Dong-hyun",
     "Bill Kramer", // Rapist (WI politician, sexual assault conviction)
+    "Bang Si-hyuk"
   ];
 
   const fetchPersonStatus = async (name: string): Promise<Person> => {
@@ -126,6 +127,7 @@ export default function CancerStatusChecker() {
         "hwang",
         "kim dong-hyun",
         "kramer",
+        "bang si-hyuk"
       ].some((n) => name.toLowerCase().includes(n));
 
     return {
